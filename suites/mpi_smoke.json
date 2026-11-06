@@ -1,0 +1,10 @@
+{
+  "description": "Small MPI smoke suite — develop against cpu/mock backends first.",
+  "calib_phase": "mpi_smoke",
+  "jobs": [
+    {"op": "map", "n": 10000, "mode": "cpu"},
+    {"op": "map", "n": 10000, "mode": "mock_gpu"},
+    {"op": "reduce", "n": 10000, "mode": "cpu"},
+    {"op": "filter", "n": 10000, "mode": "cpu", "params": {"threshold": 0.0}}
+  ]
+}

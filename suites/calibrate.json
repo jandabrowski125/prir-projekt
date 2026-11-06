@@ -1,0 +1,12 @@
+{
+  "description": "Calibration sizes (powers of two). Person 2 owns; Person 1 may extend.",
+  "calib_phase": "calibrate",
+  "jobs": [
+    {"op": "map", "n": 1024, "mode": "cpu"},
+    {"op": "map", "n": 1048576, "mode": "cpu"},
+    {"op": "reduce", "n": 1024, "mode": "cpu"},
+    {"op": "reduce", "n": 1048576, "mode": "cpu"},
+    {"op": "filter", "n": 1024, "mode": "cpu", "params": {"threshold": 0.0}},
+    {"op": "filter", "n": 1048576, "mode": "cpu", "params": {"threshold": 0.0}}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Held-out test sizes (off-grid). Evaluate selectors here.",
+  "calib_phase": "test",
+  "jobs": [
+    {"op": "map", "n": 1500000, "mode": "auto"},
+    {"op": "reduce", "n": 750000, "mode": "auto"},
+    {"op": "filter", "n": 3000000, "mode": "auto", "params": {"threshold": 0.0}}
+  ]
+}

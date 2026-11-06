@@ -1,0 +1,28 @@
+Temat: Automatyczny wybór CPU lub GPU
+Identyfikator O08 | Zespół 1–2 osoby | Poziom średni
+Opis
+Projekt tworzy wspólny mechanizm uruchamiania prostych obliczeń na CPU lub GPU. Należy
+zaimplementować trzy operacje: przekształcenie elementów map, redukcję sumy i filtrowanie.
+Program wykonuje krótki zestaw pomiarów kalibracyjnych, a następnie wybiera urządzenie na
+podstawie rozmiaru zadania. Badanie ma pokazać, kiedy korzyść z GPU pokrywa koszt przesłania
+danych.
+Interfejs przyjmuje operację, rozmiar, parametry danych i tryb automatyczny lub wymuszony.
+Wyniki wszystkich wariantów muszą być zgodne. Mechanizm wyboru może początkowo korzystać z
+tabeli progów; bardziej złożony model jest rozszerzeniem. Należy zapisywać czas kalibracji i
+decyzje.
+Zakres implementacji
+OpenMP – Wykonać trzy prymitywy przy kontrolowanej liczbie wątków oraz zmierzyć próg
+opłacalności równoległości względem referencji sekwencyjnej.
+MPI – Rozdzielać niezależne zadania pomiarowe lub partie danych. Odróżnić czas jednego zadania
+od przepustowości całego zbioru zadań.
+CUDA lub OpenCL – Przygotować jądra dla operacji i dwa tryby pomiaru: z transferami oraz dla
+danych już obecnych w pamięci urządzenia.
+Dodatkowe wyniki do raportu
+Podzielić rozmiary na kalibracyjne i testowe. Raportować trafność wyboru szybszego urządzenia
+oraz stratę czasu względem najlepszego wariantu dla każdego zadania, uwzględniając koszt strojenia.
+Zakres zespołu
+1 osoba: progi zależne od rozmiaru na jednym komputerze. 2 osoby: dodatkowo prosty model
+regresyjny lub walidacja na drugim urządzeniu.
+Rozwinięcie do artykułu lub pracy magisterskiej
+Czy prosty model po niewielu próbach przewiduje szybszy backend? Osobny test na rozmiarach
+niewidzianych podczas uczenia.
